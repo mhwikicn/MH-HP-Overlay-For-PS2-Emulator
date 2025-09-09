@@ -54,15 +54,15 @@ class MonstersMH2:
         },
         27: {
             "name": "Velocidrome",
-            "crowns": {"g": 123, "s": 119, "m": 90}
+            "crowns": {"g": 123, "s": 114, "m": 90}
         },
         28: {
             "name": "Gendrome",
-            "crowns": {"g": 123, "s": 119, "m": 90}
+            "crowns": {"g": 123, "s": 113, "m": 90}
         },
         31: {
             "name": "Iodrome",
-            "crowns": {"g": 136, "s": 124, "m": 90}
+            "crowns": {"g": 136, "s": 113, "m": 90}
         },
         33: {
             "name": "Kirin",
@@ -86,7 +86,7 @@ class MonstersMH2:
         },
         40: {
             "name": "Scarred Yian Garuga",
-            "crowns": {"g": 121, "s": 113, "m": 91}
+            "crowns": {"g": 120, "s": 115, "m": 91}
         },
         41: {
             "name": "Silver Rathalos",
@@ -214,6 +214,5 @@ class MonstersMH2:
         69: "Anteka",
         70: "Popo",
         73: "Ceanataur",
-        74: "dummy",
-        90: "NO DATA"
+        74: "dummy"
     }
