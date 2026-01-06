@@ -444,7 +444,7 @@ class Overlay(QWidget):
                             i = 0
                             for key, value in abnormal_status.items():
                                 status_label = status_labels[i if monster_number == 1 else i + max_status]
-                                if key == "Rage":
+                                if key == "04_Rage":
                                     m, s = divmod(value, 60)
                                     status_label.setText(f"{self.t(key)}: {m}:{s:02d}")
                                 else:

@@ -44,24 +44,28 @@ def get_mh2_data(pid, base_address, show_small_monsters=True):
             max_hp = read_int(process_handle, p0 + 0x41C)
             if large_monsters.get(name):
                 size = read_int(process_handle, p0 + 0x6C2)
-                add_abnormal_status("Poison", [
+                add_abnormal_status("01_Poison", [
                     read_int(process_handle, p0 + 0x444),
                     read_int(process_handle, p0 + 0x442)
                 ])
-                add_abnormal_status("Sleep", [
+                add_abnormal_status("05_Sleep", [
                     read_int(process_handle, p0 + 0x43C),
                     read_int(process_handle, p0 + 0x43A),
                 ])
-                add_abnormal_status("Paralysis", [
+                add_abnormal_status("03_Paralysis", [
                     read_int(process_handle, p0 + 0x44E),
                     read_int(process_handle, p0 + 0x44C)
                 ])
-                add_abnormal_status("Dizzy", [
+                add_abnormal_status("06_Dizzy", [
                     read_int(process_handle, p0 + 0x434, 2),
                     read_int(process_handle, p0 + 0x512, 2)
                 ])
+                add_abnormal_status("02_Tranq", [
+                    read_int(process_handle, p0 + 0x456),
+                    read_int(process_handle, p0 + 0x454)
+                ])
                 abnormal_status.update({
-                    "Rage": int(ceil(
+                    "04_Rage": int(ceil(
                         read_int(process_handle, p0 + 0x546) / 60
                     ))
                 })
