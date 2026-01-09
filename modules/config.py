@@ -271,6 +271,9 @@ class ConfigOverlay:
     always_show_abnormal_status = set_option(
         "always_show_abnormal_status", Config.Overlay, "getboolean", "false"
     )
+    abnormal_status_order = set_option(
+        "abnormal_status_order", Config.Overlay, "get", "Poison,Paralysis,Sleep,Tranq,Rage,Dizzy"
+    )
     language = set_option("language", Config.Overlay, "get", "en_US")
     locales_directory = Path(absolute_path("locales"))
     available_language = {"en_US"}

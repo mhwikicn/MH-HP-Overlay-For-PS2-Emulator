@@ -44,24 +44,24 @@ def get_mhg_data(pid, base_address, show_small_monsters=True):
             max_hp = read_int(process_handle, p0 + 0x490)
             if large_monsters.get(name):
                 size = read_int(process_handle, p0 + 0x6F6)
-                add_abnormal_status("01_Poison", [
+                add_abnormal_status("Poison", [
                     read_int(process_handle, p0 + 0x4B8),
                     read_int(process_handle, p0 + 0x4B6)
                 ])
-                add_abnormal_status("05_Sleep", [
+                add_abnormal_status("Sleep", [
                     read_int(process_handle, p0 + 0x4B0),
                     read_int(process_handle, p0 + 0x4AE)
                 ])
-                add_abnormal_status("03_Paralysis", [
+                add_abnormal_status("Paralysis", [
                     read_int(process_handle, p0 + 0x4C2),
                     read_int(process_handle, p0 + 0x4C0)
                 ])
-                add_abnormal_status("02_Tranq", [
+                add_abnormal_status("Tranq", [
                     read_int(process_handle, p0 + 0x4CA),
                     read_int(process_handle, p0 + 0x4C8)
                 ])
                 abnormal_status.update({
-                    "04_Rage": int(ceil(
+                    "Rage": int(ceil(
                         read_int(process_handle, p0 + 0x5B2) / 60
                     ))
                 })

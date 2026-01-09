@@ -99,6 +99,7 @@ class Overlay(QWidget):
         self.show_size_multiplier = ConfigOverlay.show_size_multiplier
         self.show_crown = ConfigOverlay.show_crown
         self.show_abnormal_status = ConfigOverlay.show_abnormal_status
+        self.abnormal_status_order = ConfigOverlay.abnormal_status_order
         self.always_show_abnormal_status = ConfigOverlay.always_show_abnormal_status
         self.t = Translator(ConfigOverlay.language)
         self.fix_offset = dict(x=ConfigLayout.fix_x, y=ConfigLayout.fix_y)
@@ -442,9 +443,17 @@ class Overlay(QWidget):
                             self.show_abnormal_status
                         ):
                             i = 0
+                            order_list = [item.strip() for item in self.abnormal_status_order.split(",") if item.strip()]
+                            sorted_abnormal_status_items = []
+                            for key in order_list:
+                                if key in abnormal_status:
+                                    sorted_abnormal_status_items.append((key, abnormal_status[key]))
                             for key, value in abnormal_status.items():
+                                if key not in order_list:
+                                    sorted_abnormal_status_items.append((key, value))
+                            for key, value in sorted_abnormal_status_items:
                                 status_label = status_labels[i if monster_number == 1 else i + max_status]
-                                if key == "04_Rage":
+                                if key == "Rage":
                                     m, s = divmod(value, 60)
                                     status_label.setText(f"{self.t(key)}: {m}:{s:02d}")
                                 else:

@@ -74,12 +74,12 @@
 'White Fatalis': '祖龍'
 
 # Status
-'01_Poison': '毒'
-'05_Sleep': '眠'
-'03_Paralysis': '麻'
-'06_Dizzy': '晕'
-'02_Tranq': '麻醉'
-'04_Rage': '怒'
+'Poison': '毒'
+'Sleep': '眠'
+'Paralysis': '麻'
+'Dizzy': '晕'
+'Tranq': '麻醉'
+'Rage': '怒'
 
 # Crowns
 ' Gold': ' 大金'
